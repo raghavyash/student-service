@@ -1,0 +1,9 @@
+http://localhost:8092/v1/student/enroll/save
+{
+    "studentId":"1",
+    "classId":"1",
+    "batchYear":"2026",
+    "enrollDate":"2026-05-27T18:30:00"
+
+}
+======

@@ -1,0 +1,38 @@
+server:
+  port: 8092
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/erp_edutech_student
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver # Use cj for modern drivers
+  jpa:
+    hibernate:
+      ddl-auto: update # Options: none, update, create, create-drop, validate
+    show-sql: true # Log SQL queries to the console
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cache:
+    type: redis
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      acks: all
+      retries: 3
+      # Performance tuning (optional)
+      batch-size: 16384 # 16KB
+      buffer-memory: 33554432 # 32MB
+      properties:
+        enable.idempotence: true
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+
+
+
+
+
+
