@@ -9,7 +9,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update # Options: none, update, create, create-drop, validate
-    show-sql: true # Log SQL queries to the console
+    show-sql: true  # Log SQL queries to the console
   data:
     redis:
       host: localhost

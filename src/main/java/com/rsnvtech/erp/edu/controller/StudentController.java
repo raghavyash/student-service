@@ -5,8 +5,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rsnvtech.erp.edu.config.KafkaProducerService;
 import com.rsnvtech.erp.edu.entity.StudentEntity;
 import com.rsnvtech.erp.edu.model.StudentModel;
+import com.rsnvtech.erp.edu.pdf.PdfGeneratorStudentService;
 import com.rsnvtech.erp.edu.services.StudentLoginService;
 import com.rsnvtech.erp.edu.services.StudentService;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +31,10 @@ public class StudentController {
     private KafkaProducerService kafkaProducerService;
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private PdfGeneratorStudentService pdfGeneratorStudentService;
+
     @PostMapping({"/save"})
     public ResponseEntity<Boolean> saveStudentDetail(@RequestBody StudentModel model) throws JsonProcessingException {
         log.info(" Save Student Details Started {} ",model);
@@ -62,10 +68,10 @@ public class StudentController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    @GetMapping("/getStudentDetail")
+    @GetMapping("/getStudentDetail/{studentId}")
     public ResponseEntity<StudentModel> getStudentDetail(
-            @RequestBody StudentModel model) {
-        StudentModel studentModel = studentService.getStudentDetail(model.getStudentId());
+            @PathVariable("studentId") Long studentId) {
+        StudentModel studentModel = studentService.getStudentDetail(studentId);
         return ResponseEntity.ok(studentModel);
     }
 
