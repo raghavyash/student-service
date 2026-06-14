@@ -1,9 +1,7 @@
 package com.rsnvtech.erp.edu.controller;
 
 import com.rsnvtech.erp.edu.model.ClassModel;
-import com.rsnvtech.erp.edu.model.StudentModel;
 import com.rsnvtech.erp.edu.services.ClassService;
-import com.rsnvtech.erp.edu.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

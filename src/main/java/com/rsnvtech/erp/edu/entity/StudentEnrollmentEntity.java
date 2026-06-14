@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class StudentEnrollmentEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long   id;
     @ManyToOne(fetch = FetchType.LAZY) // Many orders belong to one user

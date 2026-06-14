@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "class_subject_master")
 public class ClassSubjectMasterEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long  id;
 

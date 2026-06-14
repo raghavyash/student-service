@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Table(name = "student_login")
 public class StudentLoginEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long   id;
     @ManyToOne(fetch = FetchType.LAZY) // Many orders belong to one user

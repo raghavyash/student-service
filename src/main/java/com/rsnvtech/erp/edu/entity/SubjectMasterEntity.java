@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Table(name = "subject_master")
 public class SubjectMasterEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Long  id;
 
