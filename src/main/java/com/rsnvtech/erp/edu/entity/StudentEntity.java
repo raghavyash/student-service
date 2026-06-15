@@ -49,6 +49,8 @@ public class StudentEntity {
 
     @Column(name = "STATUS")
     private String status;
+    @Column(name = "ROLE")
+    private String role;
     @Column(name = "DESCRIPTION")
     private String description;
 
